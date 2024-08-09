@@ -1,0 +1,4 @@
+.user-name:empty::before {
+    content: 'Type your name here';
+    opacity: 0.5;
+}

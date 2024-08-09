@@ -1,0 +1,152 @@
+[
+    {
+        "date": "2024-08-25",
+        "description": "Client Payment Received",
+        "amount": 500.00,
+        "balance": 3068.67
+    },
+    {
+        "date": "2024-08-24",
+        "description": "Online Course Payment",
+        "amount": -150.00,
+        "balance": 2568.67
+    },
+    {
+        "date": "2024-08-23",
+        "description": "Gadget Purchase",
+        "amount": -350.00,
+        "balance": 2718.67
+    },
+    {
+        "date": "2024-08-22",
+        "description": "ATM Withdrawal",
+        "amount": -100.00,
+        "balance": 3068.67
+    },
+    {
+        "date": "2024-08-21",
+        "description": "Digital Subscription",
+        "amount": -10.99,
+        "balance": 3168.67
+    },
+    {
+        "date": "2024-08-20",
+        "description": "Restaurant Bill",
+        "amount": -60.00,
+        "balance": 3179.66
+    },
+    {
+        "date": "2024-08-19",
+        "description": "Insurance Payment",
+        "amount": -250.00,
+        "balance": 3239.66
+    },
+    {
+        "date": "2024-08-18",
+        "description": "Grocery Store",
+        "amount": -180.00,
+        "balance": 3489.66
+    },
+    {
+        "date": "2024-08-17",
+        "description": "Freelance Project Payment",
+        "amount": 750.00,
+        "balance": 3669.66
+    },
+    {
+        "date": "2024-08-16",
+        "description": "Rent Payment",
+        "amount": -800.00,
+        "balance": 2919.66
+    },
+    {
+        "date": "2024-08-15",
+        "description": "Utility Bill Payment",
+        "amount": -100.00,
+        "balance": 3719.66
+    },
+    {
+        "date": "2024-08-14",
+        "description": "Mobile Phone Bill",
+        "amount": -50.00,
+        "balance": 3819.66
+    },
+    {
+        "date": "2024-08-13",
+        "description": "Coffee Shop",
+        "amount": -12.50,
+        "balance": 3869.66
+    },
+    {
+        "date": "2024-08-12",
+        "description": "Online Shopping",
+        "amount": -200.00,
+        "balance": 3882.16
+    },
+    {
+        "date": "2024-08-11",
+        "description": "Client Payment Received",
+        "amount": 1200.00,
+        "balance": 4082.16
+    },
+    {
+        "date": "2024-08-10",
+        "description": "Gym Membership",
+        "amount": -40.00,
+        "balance": 2882.16
+    },
+    {
+        "date": "2024-08-09",
+        "description": "Car Fuel",
+        "amount": -60.00,
+        "balance": 2922.16
+    },
+    {
+        "date": "2024-08-08",
+        "description": "Movie Tickets",
+        "amount": -30.00,
+        "balance": 2982.16
+    },
+    {
+        "date": "2024-08-07",
+        "description": "ATM Withdrawal",
+        "amount": -200.00,
+        "balance": 3012.16
+    },
+    {
+        "date": "2024-08-06",
+        "description": "Netflix Subscription",
+        "amount": -15.99,
+        "balance": 3212.16
+    },
+    {
+        "date": "2024-08-05",
+        "description": "Freelance Payment Received",
+        "amount": 500.00,
+        "balance": 3228.15
+    },
+    {
+        "date": "2024-08-04",
+        "description": "Dinner at Restaurant",
+        "amount": -45.60,
+        "balance": 2728.15
+    },
+    {
+        "date": "2024-08-03",
+        "description": "Electricity Bill Payment",
+        "amount": -75.50,
+        "balance": 2773.75
+    },
+    {
+        "date": "2024-08-02",
+        "description": "Groceries",
+        "amount": -150.75,
+        "balance": 2849.25
+    },
+    {
+        "date": "2024-08-01",
+        "description": "Salary Credit",
+        "amount": 3000.00,
+        "balance": 3000.00
+    }
+]
