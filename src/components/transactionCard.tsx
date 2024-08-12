@@ -60,10 +60,11 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
 
                                         <div className="relative">
                                             <input
+                                                pattern="^([A-Z]{2})(\d{2})([A-Z0-9]{4,30})$"
                                                 required
                                                 autoComplete="off"
                                                 type="text"
-                                                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm border"
+                                                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm border iban"
                                                 placeholder="Enter IBAN number"
                                                 name="iban"
                                             />
@@ -81,6 +82,7 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
                                         autoComplete="off"
                                         type="number"
                                         min={1}
+                                        step={0.01}
                                         className="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm border"
                                         placeholder="Enter amount"
                                         name="amount"

@@ -2,3 +2,9 @@
     content: 'Type your name here';
     opacity: 0.5;
 }
+
+.iban:invalid{
+    border: 1px solid red;
+    box-shadow: 0px 0px 10px -5px red;
+    outline: none;
+}

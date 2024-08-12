@@ -66,7 +66,7 @@ export default function Home() {
     const formData = new FormData(e.currentTarget);
 
     // Parse form amount and calculate based on transaction type
-    const formAmount = parseInt(formData.get('amount')?.toString() || '0');
+    const formAmount = parseFloat(formData.get('amount')?.toString() || '0');
     const amount = type === 'withdraw' || type === 'transfer' ? -formAmount : formAmount;
 
     const description = formData.get('description')?.toString() || '';
