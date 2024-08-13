@@ -17,6 +17,8 @@ export default function Home() {
   const [page, setPage] = useState(0);
   const [isAscending, setAscending] = useState(false);
 
+  const [filter, setFilter] = useState<'deposit' | 'withdraw' | 'all'>('all');
+
   // State to manage form visibility
   const [formVisibility, setFormVisibility] = useState<'none' | 'deposit' | 'withdraw' | 'transfer'>('none');
 
@@ -29,10 +31,21 @@ export default function Home() {
     });
   }, [transactions, isAscending]);
 
+  const filteredTransactions = useMemo(() => {
+    if (filter === 'all') return sortedTransactions;
+    return sortedTransactions.filter(({ amount }) => {
+      if (filter === 'deposit') {
+        return amount > 0;
+      } else {
+        return amount < 0;
+      }
+    })
+  }, [sortedTransactions, filter])
+
   // Memoized paginated transactions based on chunk size
   const paginatedTransactions = useMemo(() => {
     const chunkSize = 10;
-    return sortedTransactions.reduce<transactionType[][]>((acc, curr, i) => {
+    return filteredTransactions.reduce<transactionType[][]>((acc, curr, i) => {
       const chunkIndex = Math.floor(i / chunkSize);
       if (!acc[chunkIndex]) {
         acc[chunkIndex] = []; // Start a new chunk
@@ -40,7 +53,7 @@ export default function Home() {
       acc[chunkIndex].push(curr);
       return acc;
     }, []);
-  }, [sortedTransactions]);
+  }, [filteredTransactions]);
 
   // Balance is calculated based on the latest transaction
   const balance = transactions[0]?.balance ?? 0;
@@ -143,6 +156,17 @@ export default function Home() {
           </div>
 
 
+        </div>
+
+        <div className="flex justify-end items-center mb-5 gap-5">
+          <span className="text-white">Filters:</span>
+          <div className="flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+            {['deposit', 'withdraw', 'all'].map((f) => (
+              <button onClick={() => setFilter(f)} className={`inline-block rounded-md px-4 py-2 text-sm ${filter === f ? 'text-blue-500 shadow-sm bg-white' : 'text-gray-500 hover:text-gray-700'} focus:relative capitalize`}>
+                {f}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="rounded-lg border border-gray-200">
