@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bank Account Kata
+
+## Overview
+
+This is a frontend implementation of the bank account kata tech challenge. It allows users to deposit, withdraw, and transfer money, and view their account statement. The application uses local state management to handle transactions and maintain the account statement.
+
+## Features
+
+- **Deposit Money:** Users can deposit money into their account.
+- **Withdraw Money:** Users can withdraw money from their account.
+- **Transfer Money:** Users can transfer money to another IBAN account. Only IBAN accounts are accepted.
+- **View Account Statement:** Users can view their account statement with date, amount, and balance. The statement is sorted by date (most recent first) by default.
+- **Sort Statement:** Users can sort their account statement by date in ascending or descending order.
+- **Search Movements:** Users can filter movements by type (deposits, withdrawals) and view the results sorted by date (most recent first).
+- **Pagination:** The application paginates results when there are more than 10 items. Users can navigate between pages.
+
+## Note
+
+- Date range filtering is not implemented in this version of the application.
 
 ## Getting Started
 
-First, run the development server:
+To get started with the application, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the Repository:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```bash
+    git clone https://github.com/jestinjoshi/code-sherpas-tech-challenge
+    cd code-sherpas-tech-challenge
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Install Dependencies:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-## Learn More
+3. **Run the Development Server:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Open in Browser:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    Visit [http://localhost:3000](http://localhost:3000) to see the application in action.
 
-## Deploy on Vercel
+## File Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `pages/`: Contains the main page and other React components.
+- `components/`: Contains reusable components like forms and tables.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+### Deposit Money
+
+1. Click on the "Deposit" button.
+2. Enter the amount.
+3. Submit the form to add the deposit to the account.
+
+### Withdraw Money
+
+1. Click on the "Withdraw" button.
+2. Enter the amount.
+3. Submit the form to deduct the amount from the account.
+
+### Transfer Money
+
+1. Click on the "Transfer" button.
+2. Enter the recipient IBAN and amount.
+3. Submit the form to transfer the amount to the specified IBAN.
+
+### View Account Statement
+
+1. Navigate to the "Account Statement" page.
+2. View the list of transactions sorted by date.
+
+### Search Movements
+
+1. Use the search filters to select the type of movement.
+2. Click "Search" to view filtered results.
+
+### Pagination
+
+- Use the pagination controls to navigate through the pages of the account statement or search results.
+
+## Future Improvements
+
+- Implement date range filtering for searching movements.

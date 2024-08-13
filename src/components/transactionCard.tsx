@@ -60,6 +60,7 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
 
                                         <div className="relative">
                                             <input
+                                                // HTML validation
                                                 pattern="^([A-Z]{2})(\d{2})([A-Z0-9]{4,30})$"
                                                 required
                                                 autoComplete="off"

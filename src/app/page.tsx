@@ -100,7 +100,7 @@ export default function Home() {
   return (
     <main className="flex flex-col p-14 min-h-screen bg-[#025257]">
       <div className="container mx-auto">
-        <h1 className="text-4xl mb-1 text-white">Hi, <span className="user-name min-w-10 inline-block h-full" contentEditable="plaintext-only"></span></h1>
+        <h1 className="text-4xl mb-1 text-white">Hi, <span className="user-name min-w-10 inline-block h-full" contentEditable="plaintext-only">User</span></h1>
         <p className="mb-10 text-white">Welcome to your banking portal</p>
 
         <div className="stats mb-10 grid gap-10">
