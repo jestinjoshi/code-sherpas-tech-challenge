@@ -93,7 +93,7 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
 
                             <button
                                 type="submit"
-                                className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white capitalize"
+                                className="block w-full rounded-lg bg-[#025257] px-5 py-3 text-sm font-medium text-white capitalize"
                             >
                                 {type} Money
                             </button>
