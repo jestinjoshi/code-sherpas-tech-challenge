@@ -161,8 +161,8 @@ export default function Home() {
         <div className="flex justify-end items-center mb-5 gap-5">
           <span className="text-white">Filters:</span>
           <div className="flex rounded-lg border border-gray-100 bg-gray-100 p-1">
-            {['deposit', 'withdraw', 'all'].map((f) => (
-              <button onClick={() => setFilter(f)} className={`inline-block rounded-md px-4 py-2 text-sm ${filter === f ? 'text-blue-500 shadow-sm bg-white' : 'text-gray-500 hover:text-gray-700'} focus:relative capitalize`}>
+            {(['deposit', 'withdraw', 'all'] as const).map((f, ind) => (
+              <button key={ind} onClick={() => setFilter(f)} className={`inline-block rounded-md px-4 py-2 text-sm ${filter === f ? 'text-blue-500 shadow-sm bg-white' : 'text-gray-500 hover:text-gray-700'} focus:relative capitalize`}>
                 {f}
               </button>
             ))}
@@ -231,7 +231,7 @@ export default function Home() {
                   </span>
                 </li>
 
-                {paginatedTransactions.map((el, ind) => (
+                {paginatedTransactions.map((_el, ind) => (
                   <li key={ind}>
                     <span onClick={() => setPage(ind)} className={`${ind === page ? 'border-blue-600 bg-blue-600 text-white' : 'cursor-pointer border-gray-100 bg-white text-gray-900'} block size-8 rounded border text-center leading-8`}>{ind + 1}</span>
                   </li>
