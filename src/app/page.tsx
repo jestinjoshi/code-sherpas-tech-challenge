@@ -87,7 +87,7 @@ export default function Home() {
     // Create new transaction object
     const newTransaction: transactionType = {
       date: new Date().toISOString().split('T')[0],
-      description: type === 'transfer' ? `Transferred to ${formData.get('recepient')?.toString() || ''}` : description,
+      description: type === 'transfer' ? `Transferred to ${formData.get('recipient')?.toString() || ''}` : description,
       amount: amount,
       balance: parseFloat((balance + amount).toFixed(2))
     };

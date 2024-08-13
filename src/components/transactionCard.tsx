@@ -42,7 +42,7 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
                             {type === 'transfer' &&
                                 <>
                                     <div>
-                                        <label htmlFor="receipient" className="sr-only">Recepient</label>
+                                        <label htmlFor="receipient" className="sr-only">recipient</label>
 
                                         <div className="relative">
                                             <input
@@ -50,8 +50,8 @@ export default function TransactionCard({ type, submitHandler, setDisplay }: Tra
                                                 autoComplete="off"
                                                 type="text"
                                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm border"
-                                                placeholder="Enter recepient name"
-                                                name="recepient"
+                                                placeholder="Enter recipient name"
+                                                name="recipient"
                                             />
                                         </div>
                                     </div>
