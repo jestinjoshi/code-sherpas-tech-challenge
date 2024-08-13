@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./styles.css";
 import TransactionCard from "@/components/transactionCard";
+import Overlay from "@/components/overlay";
+import ErrorCard from "@/components/errorCard";
 
 type transactionType = {
   date: string;
@@ -17,6 +19,13 @@ export default function Home() {
   const [page, setPage] = useState(0);
   const [isAscending, setIsAscending] = useState(false);
 
+  // State to check data fetching
+  const [isLoading, setIsLoading] = useState(true);
+
+  // State to set data-fetching error
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // State to manage transaction filtering
   const [filter, setFilter] = useState<'deposit' | 'withdraw' | 'all'>('all');
 
   // State to manage form visibility
@@ -69,7 +78,13 @@ export default function Home() {
   useEffect(() => {
     fetch('./dummy-data.json')
       .then(res => res.json())
-      .then((data: transactionType[]) => setTransactions(data));
+      .then((data: transactionType[]) => {
+        setTransactions(data)
+        setIsLoading(false);
+      })
+      .catch((reason: Error) => {
+        setErrorMessage(reason.message);
+      });
   }, []);
 
 
@@ -122,7 +137,7 @@ export default function Home() {
               </svg>
             </span>
             <div>
-              <p className="text-3xl font-medium text-gray-900">${balance}</p>
+              <p className="text-3xl font-medium text-gray-900">{isLoading ? 'Loading...' : `$${balance}`}</p>
               <p className="text-sm text-gray-500 text-right sm:text-left">Balance</p>
             </div>
           </div>
@@ -197,7 +212,7 @@ export default function Home() {
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">{balance}</td>
                   </tr>
                 ))}
-                {paginatedTransactions.length < 1 &&
+                {isLoading &&
                   <tr><td colSpan={4} className="px-4 py-2 text-gray-700 text-center">Loading...</td></tr>
                 }
               </tbody>
@@ -205,6 +220,10 @@ export default function Home() {
           </div>
 
           <TransactionCard type={formVisibility} setDisplay={setFormVisibility} submitHandler={handleFormSubmit} />
+
+          {errorMessage.length > 0 &&
+            <ErrorCard error={errorMessage} />
+          }
 
           {paginatedTransactions.length > 1 &&
             <div className="rounded-b-lg border-t border-gray-200 px-4 py-4 bg-gray-200">

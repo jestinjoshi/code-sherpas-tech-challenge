@@ -1,40 +1,30 @@
-.user-name:empty::before {
-    content: 'Type your name here';
-    opacity: 0.5;
+.iban:invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 10px -5px red;
+  outline: 0
 }
-
-.iban:invalid{
-    border: 1px solid red;
-    box-shadow: 0px 0px 10px -5px red;
-    outline: none;
+.transaction-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 0;
+  scale: 0.3;
+  transition: .3s all ease-in-out
 }
-
-.transaction-button::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    z-index: 0;
-    scale: 0.3;
-    transition: 0.3s all ease-in-out;
+.transaction-button:hover::before {
+  scale: 1;
+  border-radius: 10px
 }
-
-.transaction-button:hover::before{
-    scale: 1;
-    border-radius: 10px;
-}
-
 .transaction-button.deposit::before {
-    background-color: rgb(220, 252, 231);
+  background-color: #dcfce7
 }
-
 .transaction-button.withdraw::before {
-    background-color: rgb(254, 226, 226);
+  background-color: #fee2e2
 }
-
 .transaction-button.transfer::before {
-    background-color: rgb(254, 240, 138);
+  background-color: #fef08a
 }
