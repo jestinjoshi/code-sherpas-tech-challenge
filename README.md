@@ -2,7 +2,11 @@
 
 ## Overview
 
-This is a frontend implementation of the bank account kata tech challenge. It allows users to deposit, withdraw, and transfer money, and view their account statement. The application uses local state management to handle transactions and maintain the account statement.
+This is a frontend implementation of the bank account kata tech challenge. It allows users to deposit, withdraw, and transfer money, and view their account statement. It also features IBAN validation, sorting, filtering, and pagination of transactions. The application uses local state management to handle transactions and maintain the account statement.
+
+## Hosted Version
+
+You can view the live version of the application at [code-sherpas-tech-challenge.vercel.app](https://code-sherpas-tech-challenge.vercel.app/).
 
 ## Features
 
@@ -48,11 +52,6 @@ To get started with the application, follow these steps:
 4. **Open in Browser:**
 
     Visit [http://localhost:3000](http://localhost:3000) to see the application in action.
-
-## File Structure
-
-- `pages/`: Contains the main page and other React components.
-- `components/`: Contains reusable components like forms and tables.
 
 ## Usage
 
