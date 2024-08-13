@@ -6,7 +6,7 @@ This is a frontend implementation of the bank account kata tech challenge. It al
 
 ## Hosted Version
 
-You can view the live version of the application at <a href="https://code-sherpas-tech-challenge.vercel.app/" target="_blank">code-sherpas-tech-challenge.vercel.app/</a>.
+You can view the live version of the application at <a target="_blank" href="https://code-sherpas-tech-challenge.vercel.app/">code-sherpas-tech-challenge.vercel.app</a>.
 
 ## Features
 
