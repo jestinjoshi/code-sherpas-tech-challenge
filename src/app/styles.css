@@ -8,3 +8,33 @@
     box-shadow: 0px 0px 10px -5px red;
     outline: none;
 }
+
+.transaction-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 0;
+    scale: 0.3;
+    transition: 0.3s all ease-in-out;
+}
+
+.transaction-button:hover::before{
+    scale: 1;
+    border-radius: 10px;
+}
+
+.transaction-button.deposit::before {
+    background-color: rgb(220, 252, 231);
+}
+
+.transaction-button.withdraw::before {
+    background-color: rgb(254, 226, 226);
+}
+
+.transaction-button.transfer::before {
+    background-color: rgb(254, 240, 138);
+}
