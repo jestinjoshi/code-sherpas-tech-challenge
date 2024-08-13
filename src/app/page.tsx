@@ -15,7 +15,7 @@ export default function Home() {
   // State to hold transactions and pagination
   const [transactions, setTransactions] = useState<transactionType[]>([]);
   const [page, setPage] = useState(0);
-  const [isAscending, setAscending] = useState(false);
+  const [isAscending, setIsAscending] = useState(false);
 
   const [filter, setFilter] = useState<'deposit' | 'withdraw' | 'all'>('all');
 
@@ -173,7 +173,7 @@ export default function Home() {
                 <tr>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 flex items-center">
                     <span className="mr-5">Date</span>
-                    <div className="flex-col flex cursor-pointer" onClick={() => setAscending(!isAscending)}>
+                    <div className="flex-col flex cursor-pointer" onClick={() => setIsAscending(!isAscending)}>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="h-3 w-5 mb-[-10px]" fill={isAscending ? 'black' : 'gray'}>
                         <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l256 0c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" />
                       </svg>
