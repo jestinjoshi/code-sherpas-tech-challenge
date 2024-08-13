@@ -104,7 +104,7 @@ export default function Home() {
         <p className="mb-10 text-white">Welcome to your banking portal</p>
 
         <div className="grid items-center rounded-lg border border-gray-100 bg-white p-4 gap-6 stats mb-10 grid-cols-1 sm:grid-cols-2">
-          <div className="flex justify-center sm:justify-start items-center gap-4">
+          <div className="flex justify-self-center sm:justify-self-start justify-between sm:justify-start items-center gap-4 w-[245px]">
             <span className="rounded-full bg-blue-100 p-3 text-blue-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,8 +122,8 @@ export default function Home() {
               </svg>
             </span>
             <div>
-              <p className="text-2xl font-medium text-gray-900">${balance}</p>
-              <p className="text-sm text-gray-500">Balance</p>
+              <p className="text-3xl font-medium text-gray-900">${balance}</p>
+              <p className="text-sm text-gray-500 text-right sm:text-left">Balance</p>
             </div>
           </div>
           <div className="flex gap-5 justify-self-center sm:justify-self-end">
@@ -193,17 +193,20 @@ export default function Home() {
                   <tr key={index}>
                     <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{date}</td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">{description}</td>
-                    <td className={`whitespace-nowrap px-4 py-2 text-right ${amount > 0 ? 'text-green-600' : 'text-red-600'}`}>{amount}</td>
+                    <td className={`whitespace-nowrap px-4 py-2 text-right ${amount > 0 ? 'text-green-600' : 'text-red-600'}`}>{amount > 0 && '+'}{amount}</td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">{balance}</td>
                   </tr>
                 ))}
+                {paginatedTransactions.length < 1 &&
+                  <tr><td colSpan={4} className="px-4 py-2 text-gray-700 text-center">Loading...</td></tr>
+                }
               </tbody>
             </table>
           </div>
 
           <TransactionCard type={formVisibility} setDisplay={setFormVisibility} submitHandler={handleFormSubmit} />
 
-          {!!paginatedTransactions.length &&
+          {paginatedTransactions.length > 1 &&
             <div className="rounded-b-lg border-t border-gray-200 px-4 py-4 bg-gray-200">
               <ol className="flex justify-end gap-1 text-xs font-medium">
                 <li>
